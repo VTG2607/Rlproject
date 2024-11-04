@@ -120,16 +120,16 @@ public class AgentMove : Agent
     // The OnCollisionEnter() function is called when a collision
     // between our GameObject (the submarine) and another object
     // happens
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.tag == "Wall")
+        if (collision.gameObject.tag == "Wall")
         {
             // If the agent hit a wall, we want to penalize it
             // and end the episode
             AddReward(-1);
             EndEpisode();
         }
-        else if (collision.collider.tag == "Treasure")
+        if (collision.gameObject.tag == "Reward")
         {
             // If the agent found the treasure, then we reward it
             // and end the episode

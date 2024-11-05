@@ -4,19 +4,18 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class AgentMove : Agent
 {
 
-    // This will control how fast the submarine will go
+    // This will control the speed of the agent will go
     public float speed = 5f;
 
-    // This is a reference to the target (chest)
+    // This is a reference to the target
     public Transform TargetTransform;
 
-    // Since we are only dealing with discrete actions,
-    // we can simply use an enum to enumerate all of the
-    // possible actions
+    // All possible actions of agents
     private enum ACTIONS
     {
         LEFT = 0,
@@ -26,20 +25,18 @@ public class AgentMove : Agent
     }
 
     // OnEpisodeBegin() gets called once at the start
-    // of a new episode. In other words, when we reset
-    // the environment.
+    // of a new episode and resets the env
     public override void OnEpisodeBegin()
     {
-        // We reset the submarine
-        transform.localPosition = new Vector3(0, -11f, 0);
+        // We reset the monster
+        transform.localPosition = new Vector3(Random.Range(-13f, 13f), -11.7f, Random.Range(-13f, 12f));
 
-        // And we reset the chest as well
-        TargetTransform.localPosition = new Vector3(0, -12f, 7);
+        // And we reset the slime
+        TargetTransform.localPosition = new Vector3(Random.Range(-13f, 13f), -12.08f, Random.Range(-13f, 12f));
     }
 
     // The CollectObservations() function supplies all of the
-    // relevant information to the agent. You can think of this
-    // function as the "eyes" of the agent.
+    // relevant information to the agent.
     public override void CollectObservations(VectorSensor sensor)
     {
         // Submarine positions
@@ -117,21 +114,21 @@ public class AgentMove : Agent
         }
     }
 
-    // The OnCollisionEnter() function is called when a collision
-    // between our GameObject (the submarine) and another object
+    // The OnTriggerEnter() function is called when a collision
+    // between our GameObject and another object
     // happens
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
             // If the agent hit a wall, we want to penalize it
-            // and end the episode
+            // and end the episode. Add Is trigger on collision
             AddReward(-1);
             EndEpisode();
         }
         if (collision.gameObject.tag == "Reward")
         {
-            // If the agent found the treasure, then we reward it
+            // If the agent found the Reward, then we reward it
             // and end the episode
             AddReward(+1);
             EndEpisode();

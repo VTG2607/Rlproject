@@ -2,22 +2,31 @@
     "Agent": {
         "checkpoints": [
             {
-                "steps": 430377,
-                "file_path": "results\\test3\\Agent\\Agent-430377.onnx",
-                "reward": -0.6180991556613986,
-                "creation_time": 1730909218.108449,
+                "steps": 499997,
+                "file_path": "results\\test3\\Agent\\Agent-499997.onnx",
+                "reward": 2.0,
+                "creation_time": 1731147222.356667,
                 "auxillary_file_paths": [
-                    "results\\test3\\Agent\\Agent-430377.pt"
+                    "results\\test3\\Agent\\Agent-499997.pt"
+                ]
+            },
+            {
+                "steps": 572826,
+                "file_path": "results\\test3\\Agent\\Agent-572826.onnx",
+                "reward": 2.0,
+                "creation_time": 1731147316.278954,
+                "auxillary_file_paths": [
+                    "results\\test3\\Agent\\Agent-572826.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 430377,
+            "steps": 572826,
             "file_path": "results\\test3\\Agent.onnx",
-            "reward": -0.6180991556613986,
-            "creation_time": 1730909218.108449,
+            "reward": 2.0,
+            "creation_time": 1731147316.278954,
             "auxillary_file_paths": [
-                "results\\test3\\Agent\\Agent-430377.pt"
+                "results\\test3\\Agent\\Agent-572826.pt"
             ]
         }
     },

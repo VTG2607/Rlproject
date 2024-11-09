@@ -1,0 +1,5 @@
+spiky chart = decrease learning rate
+smooth = increase learn rate
+
+batch_size: use 2^n 
+buffer_size: 10 times the legth of ep

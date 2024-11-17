@@ -382,8 +382,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6366525874913457008, guid: 1360522080d92fd4b912827ac1f1a404, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 31495e6cfab6cc94b8909624f7426766, type: 3}
+    - target: {fileID: 6366525874913457008, guid: 1360522080d92fd4b912827ac1f1a404, type: 3}
       propertyPath: m_BehaviorType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366525874913457008, guid: 1360522080d92fd4b912827ac1f1a404, type: 3}
+      propertyPath: m_ObservableAttributeHandling
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7044101052925197148, guid: 1360522080d92fd4b912827ac1f1a404, type: 3}
       propertyPath: m_Size.x

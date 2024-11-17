@@ -34,6 +34,8 @@ public class AgentCtrl : Agent
         Vector3 velocity = new Vector3(moveX, 0f, moveZ).normalized * Time.deltaTime * speed;
 
         transform.localPosition += velocity;
+
+        AddReward(-0.01f); // penalising agent
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) //Heuristic movement for bug fixing(Player Control)
